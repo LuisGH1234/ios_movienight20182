@@ -39,7 +39,7 @@ class OmdbApi {
                         errorHandler(error)
                 }
             })
-        
+        	
     }
 }
 
