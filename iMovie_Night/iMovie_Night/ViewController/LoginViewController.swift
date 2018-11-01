@@ -20,12 +20,12 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func loguin() {
+    func login() {
         
     }
     
     @IBAction func signIn(_ sender: UIButton) {
-        loguin()
+        login()
     }
     
     /*
