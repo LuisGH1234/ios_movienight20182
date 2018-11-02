@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class RegisterViewController: UIViewController {
 
@@ -21,12 +22,31 @@ class RegisterViewController: UIViewController {
     }
     
     func register() {
-       /*let parameters = [
+       let parameters = [
         "firstname": nameTextField.text!,
         "email": emailTextField.text!,
         "password": passwordTextfield.text!
-        ]*/
+        ]
         
+        Alamofire.request(
+            MovieNightApi.postLoginUrl,
+            method: .post,
+            parameters: parameters
+        ).validate()
+            .responseJSON(completionHandler: { (response) in
+                switch response.result {
+                case .success(let value):
+                    do{
+                        let data = try JSONSerialization.data(
+                            withJSONObject: value, options: .prettyPrinted)
+                    
+                    }catch{
+                        print("\(error)")
+                    }
+                case .failure(let error):
+                    print("Error while requesting Data: \(error.localizedDescription)")
+                }
+                })
     }
     
     @IBAction func createAccount(_ sender: UIButton) {
