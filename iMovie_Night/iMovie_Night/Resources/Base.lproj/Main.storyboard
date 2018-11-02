@@ -19,7 +19,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ux4-9p-qM4">
                                 <rect key="frame" x="16" y="587" width="160" height="60"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="4iI-Tq-SQu"/>
                                     <constraint firstAttribute="height" constant="60" id="nFZ-Vi-LLU"/>
@@ -35,7 +35,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RrJ-d8-XB4">
                                 <rect key="frame" x="199" y="587" width="160" height="60"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="GUG-xj-c2g"/>
                                     <constraint firstAttribute="width" constant="160" id="S3F-cS-gdq"/>
@@ -124,7 +124,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fK5-89-VSR">
                                 <rect key="frame" x="20" y="286" width="335" height="40"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="vga-WD-anW"/>
                                 </constraints>
@@ -195,7 +195,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wc-mo-4o0">
                                 <rect key="frame" x="20" y="328" width="335" height="40"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="5FS-Lx-hsq"/>
                                 </constraints>
@@ -433,7 +433,7 @@
         <scene sceneID="xvm-mH-Orc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1en-XR-58d" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Events" id="LxB-rg-C6H"/>
+                    <tabBarItem key="tabBarItem" title="Events" image="calendar-icon" id="LxB-rg-C6H"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="trq-gR-Pho">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -452,7 +452,7 @@
         <scene sceneID="3Ib-Ea-oV2">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZVL-zK-cl3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Playlist" id="sJ7-2V-3h6"/>
+                    <tabBarItem key="tabBarItem" title="Playlist" image="playlist-icon" id="sJ7-2V-3h6"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="akO-qs-odl">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -469,8 +469,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="calendar-icon" width="19.200000762939453" height="19.200000762939453"/>
         <image name="home-icon" width="19.200000762939453" height="19.200000762939453"/>
         <image name="movie-night-launch" width="334" height="232"/>
+        <image name="playlist-icon" width="19.200000762939453" height="19.200000762939453"/>
         <image name="profile-icon" width="19.200000762939453" height="19.200000762939453"/>
     </resources>
     <inferredMetricsTieBreakers>
