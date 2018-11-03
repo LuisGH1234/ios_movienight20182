@@ -11,7 +11,7 @@ import Alamofire
 
 class MovieNightApi {
     
-    static let baseUrl = "http://nodejsmovienight20182.herokuapp.com/api/v2/"
+    static let baseUrl = "https://nodejsmovienight20182.herokuapp.com/api/v2/"
     
     static func handleError(error: Error) {
         print("Error while requesting Data: \(error.localizedDescription)")
@@ -37,8 +37,8 @@ class MovieNightApi {
     }
     
     public static var postLoginUrl:String{
-        return "\(baseUrl)signup" }
+        return "\(baseUrl)signin" }
     
     public static var postRegisterUrl:String{
-        return "\(baseUrl)signin" }
+        return "\(baseUrl)signup" }
 }

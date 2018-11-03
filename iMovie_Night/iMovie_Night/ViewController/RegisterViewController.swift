@@ -29,38 +29,25 @@ class RegisterViewController: UIViewController {
         ]
         
         Alamofire.request(
-            MovieNightApi.postLoginUrl,
+            MovieNightApi.postRegisterUrl,
             method: .post,
             parameters: parameters
         ).validate()
-            .responseJSON(completionHandler: { (response) in
-                switch response.result {
-                case .success(let value):
-                    do{
-                        let data = try JSONSerialization.data(
-                            withJSONObject: value, options: .prettyPrinted)
-                    
-                    }catch{
-                        print("\(error)")
-                    }
-                case .failure(let error):
-                    print("Error while requesting Data: \(error.localizedDescription)")
-                }
-                })
+        .responseJSON(completionHandler: { (response) in
+            print("Result: \(response.result)")                         // response serialization result
+            
+            if let json = response.result.value {
+                print("JSON: \(json)") // serialized json response
+            }
+            
+            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                print("Data: \(utf8Text)") // original server data as UTF8 string
+            }
+        })
     }
     
-    @IBAction func createAccount(_ sender: UIButton) {
-        register()
+    @IBAction func registerAction(_ sender: UIButton) {
+        //register()
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -24,9 +24,10 @@ class LoginViewController: UIViewController {
         
     }
     
-    @IBAction func signIn(_ sender: UIButton) {
+    @IBAction func signInAction(_ sender: UIButton) {
         login()
     }
+    
     
     /*
     // MARK: - Navigation
