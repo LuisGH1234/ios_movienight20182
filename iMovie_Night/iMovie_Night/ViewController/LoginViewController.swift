@@ -30,10 +30,12 @@ class LoginViewController: UIViewController {
     @IBAction func signInAction(_ sender: UIButton) {
         login()
     }
-    func handleResponse(response: SigninResponse){
+    func handleResponse(response: SigninResponse) -> Bool {
         if response.access == "true" {
          print("Logueado")
+            return true
         }
+        return false
     }
     
     

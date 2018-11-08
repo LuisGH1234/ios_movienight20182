@@ -36,7 +36,7 @@ class MovieNightApi {
             }
     }
     
-    static func postLoginUrl (responseHandler: @escaping(SigninResponse) -> (Void),
+    static func postLoginUrl (responseHandler: @escaping(SigninResponse) -> (Bool),
     errorHandler: (@escaping(Error) -> (Void))=handleError){
         let parameters: [String: Any] = ["email": "CesarCas@hotmail.com", "password": "miupc.456."]
        Alamofire.request("\(baseUrl)signin",
@@ -51,8 +51,17 @@ class MovieNightApi {
                         let data = try JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
                         let decoder = JSONDecoder()
                         let signinResponse = try decoder.decode(SigninResponse.self, from: data)
-                        responseHandler(signinResponse)
-                    }catch{
+                        if responseHandler(signinResponse){
+                            
+                            if let token = response.response!.allHeaderFields["Token"] as? String{
+                               print("TOKEN: \(token)")
+                                GlobalVariables.Token = token
+                            }
+                            
+                        }
+                        
+                    }
+                    catch{
                         print("\(error)")
                     }
                 case .failure(let error):
