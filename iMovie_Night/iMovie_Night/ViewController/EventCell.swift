@@ -19,7 +19,7 @@ class EventCell: UITableViewCell {
     
     func update(from event: Event) {
         pictureImageView.setImage(fromUrlString: event.image_url!, withDefaultNamed: noImageAvailable, withErrorName: noImageAvailable)
-        progressImageview.setImage(fromNamedAsset: "in-pregress")
+        progressImageview.setImage(fromNamedAsset: noImageAvailable)
         nameLabel.text = event.name_event
         descriptionLabel.text = event.description
     }
