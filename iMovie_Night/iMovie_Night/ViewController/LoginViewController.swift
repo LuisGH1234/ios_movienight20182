@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os
 
 class LoginViewController: UIViewController {
 
@@ -21,14 +22,25 @@ class LoginViewController: UIViewController {
     }
     
     func login() {
+        MovieNightApi.postLoginUrl(responseHandler: self.handleResponse,
+                                   errorHandler: self.handleError)
         
     }
     
     @IBAction func signInAction(_ sender: UIButton) {
         login()
     }
+    func handleResponse(response: SigninResponse){
+        if response.access == "true" {
+         print("Logueado")
+        }
+    }
     
     
+    func handleError(error: Error){
+        let message = "Error on SignIn Response: \(error.localizedDescription)"
+        os_log("%@", message)
+    }
     /*
     // MARK: - Navigation
 

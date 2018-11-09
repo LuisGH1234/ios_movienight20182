@@ -32,6 +32,7 @@
 		6AEB849E2194FD7300F0478D /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB849D2194FD7300F0478D /* EventsViewController.swift */; };
 		6AEB84A0219508DF00F0478D /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB849F219508DF00F0478D /* EventCell.swift */; };
 		6AEB84A221950AFC00F0478D /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB84A121950AFC00F0478D /* EventViewController.swift */; };
+		6AF9317F2192C69F007B4C43 /* SigninResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF9317E2192C69F007B4C43 /* SigninResponse.swift */; };
 		CDCE2FF5218B9E150050BE21 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCE2FF4218B9E150050BE21 /* LoginViewController.swift */; };
 		CDCE2FFE218B9E580050BE21 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCE2FFD218B9E580050BE21 /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
@@ -136,6 +137,7 @@
 		6AEB849D2194FD7300F0478D /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		6AEB849F219508DF00F0478D /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		6AEB84A121950AFC00F0478D /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		6AF9317E2192C69F007B4C43 /* SigninResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninResponse.swift; sourceTree = "<group>"; };
 		CDCE2FF4218B9E150050BE21 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CDCE2FFD218B9E580050BE21 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -252,6 +254,7 @@
 				6AC92C8E2183A38600A4C306 /* SearchResponse.swift */,
 				6AC92C902183B4B900A4C306 /* OmdbApi.swift */,
 				6AC92C922183B87400A4C306 /* MovieNightApi.swift */,
+				6AF9317E2192C69F007B4C43 /* SigninResponse.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				6AC92C8F2183A38600A4C306 /* SearchResponse.swift in Sources */,
 				6AC92C852183974400A4C306 /* User.swift in Sources */,
 				CDCE2FF5218B9E150050BE21 /* LoginViewController.swift in Sources */,
+				6AF9317F2192C69F007B4C43 /* SigninResponse.swift in Sources */,
 				6AC92C8B2183A18400A4C306 /* MovieNightResponse.swift in Sources */,
 				6AC92C8121838B7600A4C306 /* Responsibility.swift in Sources */,
 				6AC92C912183B4B900A4C306 /* OmdbApi.swift in Sources */,
