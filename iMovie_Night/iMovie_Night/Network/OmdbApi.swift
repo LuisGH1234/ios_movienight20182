@@ -17,7 +17,7 @@ class OmdbApi {
     }
     
     static func getSearch(apikey: String, word: String, responseHandler: @escaping (SearchResponse) -> Void, errorHandler: @escaping (Error) -> Void = handleError) {
-        let parameters = ["word": word, "apikey": apikey]
+        let parameters = ["apikey": apikey, "word": word]
         Alamofire.request(baseUrl, method: .get, parameters: parameters).validate()
             .responseJSON { response in
                 switch response.result {
