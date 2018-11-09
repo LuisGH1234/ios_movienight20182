@@ -10,5 +10,10 @@ import Foundation
 
 struct MovieNightResponse<T : Codable> : Codable {
     var status: String
-    var response: [T]?
+    var list: [T]?
+    
+    enum CodingKeys: String, CodingKey {
+        case status = "status"
+        case list = "list"
+    }
 }
