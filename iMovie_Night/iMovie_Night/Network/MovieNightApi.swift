@@ -36,9 +36,9 @@ class MovieNightApi {
             }
     }
     
-    static func postLoginUrl (responseHandler: @escaping(SigninResponse) -> (Bool),
+    static func postLoginUrl (Email email : String, Password password: String,responseHandler: @escaping(SigninResponse) -> (Bool),
     errorHandler: (@escaping(Error) -> (Void))=handleError){
-        let parameters: [String: Any] = ["email": "CesarCas@hotmail.com", "password": "miupc.456."]
+        let parameters: [String: Any] = ["email": email, "password": password]
        Alamofire.request("\(baseUrl)signin",
                           method: .post,
                           parameters: parameters,
@@ -53,13 +53,17 @@ class MovieNightApi {
                         let signinResponse = try decoder.decode(SigninResponse.self, from: data)
                         if responseHandler(signinResponse){
                             
-                            if let token = response.response!.allHeaderFields["Token"] as? String{
-                               print("TOKEN: \(token)")
-                                GlobalVariables.Token = token
+                            if let tokenResponse = response.response!.allHeaderFields["Token"] as? String{
+                               //print("Response TOKEN:\(tokenResponse)")
+                                let userId = String(tokenResponse.suffix(2))
+                                let index = tokenResponse.index(tokenResponse.endIndex, offsetBy: -3)
+                                let token = tokenResponse[...index]
+                                print("UserId:\(userId)")
+                                print("Token:\(token)")
+                                //GlobalVariables.Token = String(token)
+                                //GlobalVariables.userId = Int(userId)
                             }
-                            
                         }
-                        
                     }
                     catch{
                         print("\(error)")

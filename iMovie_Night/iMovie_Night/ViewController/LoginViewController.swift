@@ -21,27 +21,43 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func login() {
-        MovieNightApi.postLoginUrl(responseHandler: self.handleResponse,
-                                   errorHandler: self.handleError)
-        
-    }
-    
     @IBAction func signInAction(_ sender: UIButton) {
-        login()
+        let email: String = emailTextField.text!
+        let password: String = passwordTextField.text!
+        if !email.isEmpty && !password.isEmpty {
+            MovieNightApi.postLoginUrl(Email: email, Password: password, responseHandler: self.handleResponse,errorHandler: self.handleError)
+            
+            
+        }else{
+            let alert = UIAlertController(title: "Incomplete fields", message: "Email and Password fields must be filled", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     func handleResponse(response: SigninResponse) -> Bool {
         if response.access == "true" {
-         print("Logueado")
+            print("Logueado")
+            performSegue(withIdentifier: "homeSegue", sender: nil)
+            
             return true
         }
-        return false
+        else {
+            let alert = UIAlertController(title: "Oopps", message: "Email or Password are incorrect", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Try Again", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return false
+            
+        }
     }
     
     
     func handleError(error: Error){
         let message = "Error on SignIn Response: \(error.localizedDescription)"
         os_log("%@", message)
+        /*let alert = UIAlertController(title: "Oopps", message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Try Again", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+ */
     }
     /*
     // MARK: - Navigation

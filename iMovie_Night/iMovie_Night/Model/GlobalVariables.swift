@@ -10,4 +10,5 @@ import Foundation
 
 struct GlobalVariables {
     static var Token: String?
+    static var userId: Int?
 }
