@@ -16,8 +16,8 @@ class OmdbApi {
         print("Error while requesting Data: \(error.localizedDescription)")
     }
     
-    static func getSearch(apikey: String, word: String, responseHandler: @escaping (SearchResponse) -> Void, errorHandler: @escaping (Error) -> Void = handleError) {
-        let parameters = ["word": word, "apikey": apikey]
+    static func getSearch(apikey: String, s: String, responseHandler: @escaping (SearchResponse) -> Void, errorHandler: @escaping (Error) -> Void = handleError) {
+        let parameters = ["s": s, "apikey": apikey]
         Alamofire.request(baseUrl, method: .get, parameters: parameters).validate()
             .responseJSON { response in
                 switch response.result {

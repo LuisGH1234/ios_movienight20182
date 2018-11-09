@@ -10,6 +10,6 @@ import Foundation
 
 struct SearchResponse : Codable {
     var Search: [Title]?
-    var totalResults: Int
-    var Response: String
+    var totalResults: String?
+    var Response: String?
 }
