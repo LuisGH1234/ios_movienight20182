@@ -70,7 +70,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="yE2-ne-UyF" kind="show" id="Rsg-Vf-TcQ"/>
+                                    <segue destination="yE2-ne-UyF" kind="showDetail" id="Rsg-Vf-TcQ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -322,55 +322,47 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Table Row" rowHeight="162" id="xNh-I1-IDD" customClass="EventCell" customModule="iMovie_Night" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="162"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Table Row" rowHeight="125" id="xNh-I1-IDD" customClass="EventCell" customModule="iMovie_Night" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="125"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xNh-I1-IDD" id="mn2-4w-mLZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="161.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="124.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wEw-nd-gSN">
-                                            <rect key="frame" x="8" y="8" width="140" height="108"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-image-available" translatesAutoresizingMaskIntoConstraints="NO" id="wEw-nd-gSN">
+                                            <rect key="frame" x="8" y="8" width="140" height="108.5"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="140" id="KSm-Ct-BVh"/>
-                                                <constraint firstAttribute="height" constant="108" id="aL3-bF-MtA"/>
+                                                <constraint firstAttribute="width" constant="140" id="hM5-me-79L"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMq-GK-rAd">
-                                            <rect key="frame" x="156" y="11" width="45" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMq-GK-rAd">
+                                            <rect key="frame" x="156" y="11" width="45" height="20.5"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CNw-od-jur">
-                                            <rect key="frame" x="22" y="124" width="112" height="29"/>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3b-OB-aY6">
-                                            <rect key="frame" x="156" y="36.5" width="88" height="20.5"/>
+                                            <rect key="frame" x="156" y="39.5" width="88" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="wEw-nd-gSN" firstAttribute="leading" secondItem="mn2-4w-mLZ" secondAttribute="leading" constant="8" id="3Gz-LO-QaI"/>
-                                        <constraint firstItem="wEw-nd-gSN" firstAttribute="centerX" secondItem="CNw-od-jur" secondAttribute="centerX" id="G4z-M7-enY"/>
-                                        <constraint firstItem="wEw-nd-gSN" firstAttribute="top" secondItem="rMq-GK-rAd" secondAttribute="top" id="N00-Wd-YZ0"/>
-                                        <constraint firstItem="wEw-nd-gSN" firstAttribute="top" secondItem="mn2-4w-mLZ" secondAttribute="top" constant="8" id="QrQ-oI-UaQ"/>
-                                        <constraint firstItem="CNw-od-jur" firstAttribute="top" secondItem="wEw-nd-gSN" secondAttribute="bottom" constant="8" symbolic="YES" id="ZQA-DB-jEH"/>
-                                        <constraint firstItem="L3b-OB-aY6" firstAttribute="top" secondItem="rMq-GK-rAd" secondAttribute="bottom" constant="8" symbolic="YES" id="aAh-fS-YiF"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="CNw-od-jur" secondAttribute="bottom" constant="-2" id="e1G-kW-LYo"/>
-                                        <constraint firstItem="L3b-OB-aY6" firstAttribute="leading" secondItem="wEw-nd-gSN" secondAttribute="trailing" constant="8" symbolic="YES" id="fk9-hq-tHY"/>
-                                        <constraint firstItem="CNw-od-jur" firstAttribute="leading" secondItem="mn2-4w-mLZ" secondAttribute="leadingMargin" constant="6" id="vDM-1Q-JjA"/>
-                                        <constraint firstItem="rMq-GK-rAd" firstAttribute="leading" secondItem="wEw-nd-gSN" secondAttribute="trailing" constant="8" symbolic="YES" id="zbM-hd-djp"/>
+                                        <constraint firstAttribute="bottom" secondItem="wEw-nd-gSN" secondAttribute="bottom" constant="8" id="JhE-uU-fWE"/>
+                                        <constraint firstItem="wEw-nd-gSN" firstAttribute="leading" secondItem="mn2-4w-mLZ" secondAttribute="leading" constant="8" id="NSG-lI-SeU"/>
+                                        <constraint firstItem="rMq-GK-rAd" firstAttribute="top" secondItem="mn2-4w-mLZ" secondAttribute="top" constant="11" id="a6y-qO-rJ8"/>
+                                        <constraint firstItem="rMq-GK-rAd" firstAttribute="leading" secondItem="wEw-nd-gSN" secondAttribute="trailing" constant="8" id="bKQ-W7-zzz"/>
+                                        <constraint firstItem="L3b-OB-aY6" firstAttribute="leading" secondItem="wEw-nd-gSN" secondAttribute="trailing" constant="8" id="bo3-Bu-kDg"/>
+                                        <constraint firstItem="L3b-OB-aY6" firstAttribute="top" secondItem="rMq-GK-rAd" secondAttribute="bottom" constant="8" id="rPm-gl-gqb"/>
+                                        <constraint firstItem="wEw-nd-gSN" firstAttribute="top" secondItem="mn2-4w-mLZ" secondAttribute="top" constant="8" id="yYR-Zp-UGi"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="descriptionLabel" destination="L3b-OB-aY6" id="zCI-pl-hwy"/>
                                     <outlet property="nameLabel" destination="rMq-GK-rAd" id="xVD-YA-9TB"/>
                                     <outlet property="pictureImageView" destination="wEw-nd-gSN" id="L0M-j7-0XK"/>
-                                    <outlet property="progressImageview" destination="CNw-od-jur" id="J8z-HM-Okb"/>
-                                    <segue destination="PKk-up-kx3" kind="presentation" identifier="showEvent" id="ntr-rk-0Re"/>
+                                    <segue destination="PKk-up-kx3" kind="show" identifier="showEvent" id="ntr-rk-0Re"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -385,30 +377,19 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="duK-GL-qAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5212" y="-505"/>
+            <point key="canvasLocation" x="5212" y="-505.09745127436287"/>
         </scene>
-        <!--Event View Controller-->
+        <!--Event-->
         <scene sceneID="7UV-rv-V9V">
             <objects>
                 <viewController id="PKk-up-kx3" customClass="EventViewController" customModule="iMovie_Night" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2O6-hG-kLi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FPf-4o-SDY">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Title" id="a0Y-TE-MiY">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" id="REL-VA-8HH"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="3Xk-Gd-acH"/>
                     </view>
-                    <navigationItem key="navigationItem" id="4AL-40-CaL"/>
+                    <navigationItem key="navigationItem" title="Event" id="4AL-40-CaL"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SAP-FA-tFx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -566,6 +547,7 @@
         <image name="calendar-icon" width="19.200000762939453" height="19.200000762939453"/>
         <image name="home-icon" width="19.200000762939453" height="19.200000762939453"/>
         <image name="movie-night-launch" width="334" height="232"/>
+        <image name="no-image-available" width="224" height="224"/>
         <image name="playlist-icon" width="19.200000762939453" height="19.200000762939453"/>
         <image name="profile-icon" width="19.200000762939453" height="19.200000762939453"/>
     </resources>

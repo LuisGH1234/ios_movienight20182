@@ -11,7 +11,6 @@ import UIKit
 class EventCell: UITableViewCell {
 
     @IBOutlet weak var pictureImageView: UIImageView!
-    @IBOutlet weak var progressImageview: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
@@ -19,7 +18,6 @@ class EventCell: UITableViewCell {
     
     func update(from event: Event) {
         pictureImageView.setImage(fromUrlString: event.image_url!, withDefaultNamed: noImageAvailable, withErrorName: noImageAvailable)
-        progressImageview.setImage(fromNamedAsset: noImageAvailable)
         nameLabel.text = event.name_event
         descriptionLabel.text = event.description
     }
