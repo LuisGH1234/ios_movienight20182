@@ -38,6 +38,8 @@ class EventsViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showEvent" {
+            //let nav = segue.destination as! UINavigationController
+            //let destination = nav.topViewController as! EventViewController
             let destination = segue.destination as! EventViewController
             destination.event = events[currentRow]
         }
