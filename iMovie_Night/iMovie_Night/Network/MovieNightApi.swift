@@ -11,7 +11,7 @@ import Alamofire
 
 class MovieNightApi {
     
-    static let baseUrl = "http://nodejsmovienight20182.herokuapp.com/api/v2/"
+    static let baseUrl = "http://movienight21012.herokuapp.com/api/v2/"
     
     static func handleError(error: Error) {
         print("Error while requesting Data: \(error.localizedDescription)")
@@ -48,9 +48,10 @@ class MovieNightApi {
         get(token: token, urlString: url, responseHandler: responseHandler, errorHandler: errorHandler)
     }
     
-    static func postLoginUrl (responseHandler: @escaping(SigninResponse) -> (Void),
-    errorHandler: (@escaping(Error) -> (Void))=handleError){
-        let parameters: [String: Any] = ["email": "CesarCas@hotmail.com", "password": "miupc.456."]
+    static func postLogin (Email email : String, Password password: String,responseHandler: @escaping(SigninResponse) -> (Bool),
+                              errorHandler: (@escaping(Error) -> (Void))=handleError){
+       let parameters: [String: Any] = ["email": email, "password": password]
+        //let parameters: [String: Any] = ["email": "CesarCas@hotmail.com", "password": "miupc.456."]
        Alamofire.request("\(baseUrl)signin",
                           method: .post,
                           parameters: parameters,
@@ -60,20 +61,56 @@ class MovieNightApi {
                 switch response.result{
                 case .success(let value):
                     do{
+                        print("Success")
                         let data = try JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
                         let decoder = JSONDecoder()
                         let signinResponse = try decoder.decode(SigninResponse.self, from: data)
-                        responseHandler(signinResponse)
+                        if responseHandler(signinResponse){                            
+                            if let tokenResponse = response.response!.allHeaderFields["Token"] as? String{
+                                let tokenSeparated = tokenResponse.split(separator: " ")
+                                let token = tokenSeparated.first!
+                                let userId = Int(tokenSeparated.last!)
+                                print("UserId: \(userId!)")
+                                print("Token: \(token)")
+                            }
+                        } 
                     }catch{
                         print("\(error)")
                     }
                 case .failure(let error):
+                    print("Failure")
                     errorHandler(error)
                 }
             })
         
     }
     
-    public static var postRegisterUrl:String{
-        return "\(baseUrl)signup" }
+    static func postRegister(Firstname firstname: String,Email email : String, Password password: String,responseHandler: @escaping(SignupResponse) -> (Void), errorHandler: (@escaping(Error) -> (Void))=handleError){
+        let parameters: [String: Any] = ["firstname": firstname,"email": email, "password": password]
+        //let parameters: [String: Any] = ["email": "CesarCas@hotmail.com", "password": "miupc.456."]
+        Alamofire.request("\(baseUrl)signup",
+            method: .post,
+            parameters: parameters,
+            encoding: JSONEncoding.default)
+            .validate()
+            .responseJSON(completionHandler: {(response) in
+                switch response.result{
+                case .success(let value):
+                    do{
+                        print("Success")
+                        let data = try JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
+                        let decoder = JSONDecoder()
+                        let signupResponse = try decoder.decode(SignupResponse.self, from: data)
+                        responseHandler(signupResponse)
+                        
+                    }catch{
+                        print("\(error)")
+                    }
+                case .failure(let error):
+                    print("Failure")
+                    errorHandler(error)
+                }
+            })
+    
+    }
 }

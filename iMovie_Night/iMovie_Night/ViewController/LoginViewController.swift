@@ -21,25 +21,34 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func login() {
-        MovieNightApi.postLoginUrl(responseHandler: self.handleResponse,
-                                   errorHandler: self.handleError)
-        
-    }
     
-    @IBAction func signInAction(_ sender: UIButton) {
-        login()
-    }
-    func handleResponse(response: SigninResponse){
-        if response.access == "true" {
-         print("Logueado")
+    @IBAction func loginAction(_ sender: Any) {
+        let email: String = emailTextField.text!
+        let password: String = passwordTextField.text!
+        if !email.isEmpty && !password.isEmpty {
+            MovieNightApi.postLogin(Email: email, Password: password, responseHandler: self.handleResponse, errorHandler: self.handleError)
+        }else {
+            let alert = UIAlertController(title: "Incomplete fields", message: "Email and Password fields must be filled", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
+    }
+    func handleResponse(response: SigninResponse) -> Bool {
+        if response.access == "true" {            
+            performSegue(withIdentifier: "signinSegue", sender: nil)
+            print("Logueado")
+            return true
+        }
+        return false
     }
     
     
     func handleError(error: Error){
         let message = "Error on SignIn Response: \(error.localizedDescription)"
         os_log("%@", message)
+        let alert = UIAlertController(title: "Oopps", message: "Something went wrong, please try again", preferredStyle: UIAlertController.Style.alert)
+         alert.addAction(UIAlertAction(title: "Try Again", style: UIAlertAction.Style.default, handler: nil))
+         self.present(alert, animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation
