@@ -69,6 +69,8 @@ class RegisterViewController: UIViewController {
             let userId = Int(tokenSeparated.last!)
             print("UserId: \(userId!)")
             print("Token: \(token)")
+            UserStore.shared.userId = userId!
+            UserStore.shared.userToken = String (token)
             print("Registrado")
         }else if response.status == "exist"{
             let alert = UIAlertController(title: "Oopps", message: "This user already exist", preferredStyle: UIAlertController.Style.alert)

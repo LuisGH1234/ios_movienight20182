@@ -143,6 +143,7 @@
                                 </state>
                                 <connections>
                                     <action selector="loginAction:" destination="a2h-LW-5a8" eventType="touchUpInside" id="lRf-X7-iF1"/>
+                                    <segue destination="yE2-ne-UyF" kind="presentation" identifier="signinSegue" id="hZw-R7-rBQ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -169,7 +170,6 @@
                     <connections>
                         <outlet property="emailTextField" destination="33p-wi-SRN" id="zuJ-4E-J6p"/>
                         <outlet property="passwordTextField" destination="FlI-I3-4Tj" id="1U9-Z0-QIg"/>
-                        <segue destination="yE2-ne-UyF" kind="show" identifier="signinSegue" id="xvJ-I6-zs4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bQo-vH-gNE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -238,6 +238,7 @@
                                 </state>
                                 <connections>
                                     <action selector="registerAction:" destination="cke-kv-1kr" eventType="touchUpInside" id="XJB-QM-bnS"/>
+                                    <segue destination="yE2-ne-UyF" kind="presentation" identifier="signupSegue" id="9KN-NH-FLX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -271,12 +272,11 @@
                         <outlet property="emailTextField" destination="JZd-c5-PVV" id="w20-4x-ZSO"/>
                         <outlet property="nameTextField" destination="arZ-sx-JVm" id="azp-ex-ftT"/>
                         <outlet property="passwordTextfield" destination="8uJ-oy-Bzv" id="YKn-79-Ybx"/>
-                        <segue destination="yE2-ne-UyF" kind="show" identifier="signupSegue" id="fXL-uz-kLh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qRc-Pp-ARQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1951" y="-510"/>
+            <point key="canvasLocation" x="1971" y="-490"/>
         </scene>
         <!--Home-->
         <scene sceneID="u15-ZM-qRr">
@@ -386,22 +386,61 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="duK-GL-qAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5212" y="-506"/>
+            <point key="canvasLocation" x="5154" y="-609"/>
         </scene>
         <!--Create your MovieNight-->
         <scene sceneID="UCP-Gz-TJj">
             <objects>
-                <viewController title="Create your MovieNight" id="VnX-HT-b55" sceneMemberID="viewController">
+                <viewController title="Create your MovieNight" id="VnX-HT-b55" customClass="CreateEventViewController" customModule="iMovie_Night" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FlJ-Hf-cAt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Event name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mwO-2N-xyI">
+                                <rect key="frame" x="16" y="352" width="382" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7pL-ax-Flw">
+                                <rect key="frame" x="16" y="398" width="382" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movie-night-launch" translatesAutoresizingMaskIntoConstraints="NO" id="GlW-7x-yIU">
+                                <rect key="frame" x="16" y="104" width="382" height="232"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7pL-ax-Flw" firstAttribute="top" secondItem="mwO-2N-xyI" secondAttribute="bottom" constant="16" id="0u3-sw-7Yo"/>
+                            <constraint firstItem="V9e-o3-PmP" firstAttribute="trailing" secondItem="mwO-2N-xyI" secondAttribute="trailing" constant="16" id="AXe-22-Tap"/>
+                            <constraint firstItem="V9e-o3-PmP" firstAttribute="trailing" secondItem="GlW-7x-yIU" secondAttribute="trailing" constant="16" id="MTc-dr-VsU"/>
+                            <constraint firstItem="mwO-2N-xyI" firstAttribute="leading" secondItem="V9e-o3-PmP" secondAttribute="leading" constant="16" id="VYU-BO-mfj"/>
+                            <constraint firstItem="mwO-2N-xyI" firstAttribute="top" secondItem="GlW-7x-yIU" secondAttribute="bottom" constant="16" id="bIO-r4-a6n"/>
+                            <constraint firstItem="GlW-7x-yIU" firstAttribute="leading" secondItem="FlJ-Hf-cAt" secondAttribute="leading" constant="16" id="bMh-0b-qzE"/>
+                            <constraint firstItem="V9e-o3-PmP" firstAttribute="trailing" secondItem="7pL-ax-Flw" secondAttribute="trailing" constant="16" id="ddQ-N8-FJG"/>
+                            <constraint firstItem="GlW-7x-yIU" firstAttribute="top" secondItem="V9e-o3-PmP" secondAttribute="top" constant="16" id="ijp-QH-tbZ"/>
+                            <constraint firstItem="7pL-ax-Flw" firstAttribute="leading" secondItem="V9e-o3-PmP" secondAttribute="leading" constant="16" id="qQf-xa-heN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="V9e-o3-PmP"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Create MovieNight" leftItemsSupplementBackButton="YES" id="AMu-TW-hKR">
+                        <barButtonItem key="rightBarButtonItem" title="Create" id="JPj-Wm-w6a">
+                            <connections>
+                                <action selector="CreateEvent:" destination="VnX-HT-b55" id="kEX-PM-pPu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="EventDescription" destination="7pL-ax-Flw" id="zxB-Fl-xFK"/>
+                        <outlet property="EventName" destination="mwO-2N-xyI" id="aeQ-RW-oY9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4RL-aD-QDG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6100" y="-836"/>
+            <point key="canvasLocation" x="6074" y="-826"/>
         </scene>
         <!--Event-->
         <scene sceneID="7UV-rv-V9V">
@@ -933,6 +972,6 @@
         <image name="unicorn.png" width="200" height="205"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fXL-uz-kLh"/>
+        <segue reference="9KN-NH-FLX"/>
     </inferredMetricsTieBreakers>
 </document>

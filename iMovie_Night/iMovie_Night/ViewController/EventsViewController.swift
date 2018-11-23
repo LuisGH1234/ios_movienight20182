@@ -21,6 +21,7 @@ class EventsViewController: UITableViewController {
         super.viewDidLoad()
         MovieNightApi.getEventsByUser(token: token, user_id: user_id, responseHandler: handleResponse, errorHandler: handleError)
     }
+    @IBAction func back(segue: UIStoryboardSegue){}
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1

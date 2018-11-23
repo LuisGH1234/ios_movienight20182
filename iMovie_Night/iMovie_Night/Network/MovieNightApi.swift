@@ -70,6 +70,8 @@ class MovieNightApi {
                                 let tokenSeparated = tokenResponse.split(separator: " ")
                                 let token = tokenSeparated.first!
                                 let userId = Int(tokenSeparated.last!)
+                                UserStore.shared.userToken = String(token)
+                                UserStore.shared.userId = userId!
                                 print("UserId: \(userId!)")
                                 print("Token: \(token)")
                             }
@@ -112,5 +114,42 @@ class MovieNightApi {
                 }
             })
     
+    }
+    static private func post <T: Decodable>(urlString: String,
+                                            parameters: [String : Any],
+                                            responseType: T.Type,
+                                            responseHandler: @escaping (T) -> Void,
+                                            errorHandler: @escaping (Error) -> Void = handleError){
+        let headers = ["Content-Type": "application/json","authorization": UserStore.shared.userToken]
+        Alamofire.request("\(urlString)",
+            method: .post,
+            parameters: parameters,
+            encoding: JSONEncoding.default,
+            headers: headers)
+            .validate()
+            .responseJSON(completionHandler: {(response) in
+                switch response.result{
+                case .success(let value):
+                    do{
+                        
+                        let data = try JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
+                        let decoder = JSONDecoder()
+                        let dataResponse = try decoder.decode(responseType.self, from: data)
+                        print("Success")
+                        responseHandler(dataResponse)
+                        
+                    }catch{
+                        print("\(error)")
+                    }
+                case .failure(let error):
+                    print("Failure")
+                    errorHandler(error)
+                }
+            })
+    }
+    static func postEvent(Name :String, Description: String, responseHandler: @escaping (PostResponse) -> Void, errorHandler: @escaping (Error) -> Void = handleError) {
+        let url = "\(baseUrl)events"
+        var parameters: [String: Any] = ["name":Name, "user_id": UserStore.shared.userId, "rol_id":11, "image_url": "URL","description": Description]
+        post(urlString: url, parameters: parameters, responseType: PostResponse.self, responseHandler: responseHandler, errorHandler: errorHandler)
     }
 }
