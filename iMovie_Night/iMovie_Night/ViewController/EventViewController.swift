@@ -16,7 +16,7 @@ class EventViewController: UIViewController {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     var event: Event?
-    let noImage = "no-image-available"
+    let noImage = "pop_corn_one"
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

@@ -14,7 +14,7 @@ class EventCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    let noImageAvailable = "no-image-available"
+    let noImageAvailable = "pop_corn_one"
     
     func update(from event: Event) {
         pictureImageView.setImage(fromUrlString: event.image_url!, withDefaultNamed: noImageAvailable, withErrorName: noImageAvailable)

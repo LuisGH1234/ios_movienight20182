@@ -10,16 +10,24 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class MoviesTableViewController: UITableViewController {
+class MoviesTableViewController: UITableViewController, UISearchBarDelegate {
     var titles: [Title] = [Title]()
     var currentRow = 0
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet var table: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         OmdbApi.getSearch(apikey: "deb5b9ed", s: "marvel", responseHandler: handleResponse, errorHandler: handleError)
     }
-    
+    private func setUpSearchBar(){
+        searchBar.delegate = self
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        OmdbApi.getSearch(apikey: "deb5b9ed", s: searchBar.text!, responseHandler: handleResponse, errorHandler: handleError)
+        table.reloadData()
+    }
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

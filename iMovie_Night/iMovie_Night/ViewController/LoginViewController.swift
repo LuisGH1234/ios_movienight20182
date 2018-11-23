@@ -34,11 +34,15 @@ class LoginViewController: UIViewController {
         }
     }
     func handleResponse(response: SigninResponse) -> Bool {
-        if response.access == "true" {            
+        print(response.access)
+        if response.access == "true" {
             performSegue(withIdentifier: "signinSegue", sender: nil)
             print("Logueado")
             return true
         }
+        let alert = UIAlertController(title: "Oopps", message: "Something went wrong, please try again", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Try Again", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
         return false
     }
     
