@@ -48,6 +48,11 @@ class MovieNightApi {
         get(token: token, urlString: url, responseHandler: responseHandler, errorHandler: errorHandler)
     }
     
+    static func getHomeItems(token: String, user_id: Int, responsehandler: @escaping (MovieNightResponse<HomeItem>) -> Void, erroHandler: @escaping (Error) -> Void = handleError) {
+        let url = "\(baseUrl)home/users/\(user_id)"
+        get(token: token, urlString: url, responseHandler: responsehandler)
+    }
+    
     static func postLogin (Email email : String, Password password: String,responseHandler: @escaping(SigninResponse) -> (Bool),
                               errorHandler: (@escaping(Error) -> (Void))=handleError){
        let parameters: [String: Any] = ["email": email, "password": password]
@@ -149,7 +154,7 @@ class MovieNightApi {
     }
     static func postEvent(Name :String, Description: String, responseHandler: @escaping (PostResponse) -> Void, errorHandler: @escaping (Error) -> Void = handleError) {
         let url = "\(baseUrl)events"
-        var parameters: [String: Any] = ["name":Name, "user_id": UserStore.shared.userId, "rol_id":11, "image_url": "URL","description": Description]
+        let parameters: [String: Any] = ["name":Name, "user_id": UserStore.shared.userId, "rol_id":11, "image_url": "URL","description": Description]
         post(urlString: url, parameters: parameters, responseType: PostResponse.self, responseHandler: responseHandler, errorHandler: errorHandler)
     }
 }

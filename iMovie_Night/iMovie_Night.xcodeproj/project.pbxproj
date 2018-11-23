@@ -10,6 +10,10 @@
 		6A4B720F21A384F700D5A99E /* SignupResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4B720E21A384F700D5A99E /* SignupResponse.swift */; };
 		6A9A8E0921A7540000BC31E9 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9A8E0821A7540000BC31E9 /* CreateEventViewController.swift */; };
 		6A9A8E1221A75BC700BC31E9 /* PostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9A8E1121A75BC700BC31E9 /* PostResponse.swift */; };
+		6AC04DC721A7D34B0001049F /* HomeTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AC04DC621A7D34B0001049F /* HomeTab.storyboard */; };
+		6AC04DD021A7D9010001049F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC04DCF21A7D9010001049F /* HomeViewController.swift */; };
+		6AC04DD221A7D9D20001049F /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC04DD121A7D9D20001049F /* HomeCell.swift */; };
+		6AC04DD421A7DA870001049F /* HomeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC04DD321A7DA870001049F /* HomeItem.swift */; };
 		6AC92C4021837E6300A4C306 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC92C3F21837E6300A4C306 /* AppDelegate.swift */; };
 		6AC92C4221837E6300A4C306 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC92C4121837E6300A4C306 /* ViewController.swift */; };
 		6AC92C4521837E6300A4C306 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AC92C4321837E6300A4C306 /* Main.storyboard */; };
@@ -122,6 +126,10 @@
 		6A4B720E21A384F700D5A99E /* SignupResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupResponse.swift; sourceTree = SOURCE_ROOT; };
 		6A9A8E0821A7540000BC31E9 /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		6A9A8E1121A75BC700BC31E9 /* PostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostResponse.swift; path = iMovie_Night/ViewController/PostResponse.swift; sourceTree = SOURCE_ROOT; };
+		6AC04DC621A7D34B0001049F /* HomeTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeTab.storyboard; sourceTree = "<group>"; };
+		6AC04DCF21A7D9010001049F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		6AC04DD121A7D9D20001049F /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		6AC04DD321A7DA870001049F /* HomeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItem.swift; sourceTree = "<group>"; };
 		6AC92C3C21837E6300A4C306 /* iMovie_Night.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMovie_Night.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AC92C3F21837E6300A4C306 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AC92C4121837E6300A4C306 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -228,6 +236,7 @@
 				6AC92C4921837E6400A4C306 /* Assets.xcassets */,
 				6AC92C4B21837E6400A4C306 /* LaunchScreen.storyboard */,
 				6AC92C4321837E6300A4C306 /* Main.storyboard */,
+				6AC04DC621A7D34B0001049F /* HomeTab.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -246,6 +255,7 @@
 				6AC92C862183976400A4C306 /* Rol.swift */,
 				6AC92C8821839D5700A4C306 /* Title.swift */,
 				CDECBE3A21A4374D000B07A1 /* UserStore.swift */,
+				6AC04DD321A7DA870001049F /* HomeItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -265,6 +275,8 @@
 				7FF5A1232195DD6800CED185 /* MovieCell.swift */,
 				7FF5A1252195DD9800CED185 /* MovieViewController.swift */,
 				6A9A8E0821A7540000BC31E9 /* CreateEventViewController.swift */,
+				6AC04DCF21A7D9010001049F /* HomeViewController.swift */,
+				6AC04DD121A7D9D20001049F /* HomeCell.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -403,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AC92C4D21837E6400A4C306 /* LaunchScreen.storyboard in Resources */,
+				6AC04DC721A7D34B0001049F /* HomeTab.storyboard in Resources */,
 				6AC92C4A21837E6400A4C306 /* Assets.xcassets in Resources */,
 				6AC92C4521837E6300A4C306 /* Main.storyboard in Resources */,
 			);
@@ -440,10 +453,13 @@
 				6AEB84D52195794200F0478D /* MovieNightResponse.swift in Sources */,
 				CDCE2FFE218B9E580050BE21 /* RegisterViewController.swift in Sources */,
 				6AC92C782183875700A4C306 /* Snack.swift in Sources */,
+				6AC04DD221A7D9D20001049F /* HomeCell.swift in Sources */,
 				6AEB84A0219508DF00F0478D /* EventCell.swift in Sources */,
 				6AC92C4821837E6300A4C306 /* iMovie_Night.xcdatamodeld in Sources */,
+				6AC04DD021A7D9010001049F /* HomeViewController.swift in Sources */,
 				6A4B720F21A384F700D5A99E /* SignupResponse.swift in Sources */,
 				6AC92C852183974400A4C306 /* User.swift in Sources */,
+				6AC04DD421A7DA870001049F /* HomeItem.swift in Sources */,
 				CDCE2FF5218B9E150050BE21 /* LoginViewController.swift in Sources */,
 				6AC92C8121838B7600A4C306 /* Responsibility.swift in Sources */,
 			);
