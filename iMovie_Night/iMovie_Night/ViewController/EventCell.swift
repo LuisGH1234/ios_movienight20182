@@ -18,8 +18,13 @@ class EventCell: UITableViewCell {
     
     func update(from event: Event) {
         pictureImageView.setImage(fromUrlString: event.image_url!, withDefaultNamed: noImageAvailable, withErrorName: noImageAvailable)
-        nameLabel.text = event.name_event
-        descriptionLabel.text = event.description
+        if (event.name_event?.isEmpty == false){
+            nameLabel.text = event.name_event
+        }
+        if (event.description?.isEmpty == false){
+            descriptionLabel.text = event.description
+        }
+        
     }
 
 }
