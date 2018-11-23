@@ -33,6 +33,11 @@ class HomeCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        userpicImageView.layer.borderWidth = 1
+        userpicImageView.layer.masksToBounds = false
+        userpicImageView.layer.borderColor = UIColor.black.cgColor
+        userpicImageView.layer.cornerRadius = userpicImageView.frame.height/2
+        userpicImageView.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
