@@ -12,9 +12,9 @@ private let reuseIdentifier = "Table Row"
 
 class HomeViewController: UITableViewController {
 
-    let token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZGQiOjcxLCJzdWIiOiJDZXNhckNhc0Bob3RtYWlsLmNvbSIsInB3ZCI6Im1pdXBjLjQ1Ni4iLCJwaG8iOiI5MTQ4NzI4MzMifQ.76V1nfjgq2Jk8txT_KezUwFcHaOmt_ZDW2dzviY0qS0"
-    //let token = UserStore.shared.userToken
-    //let user_id = UserStore.shared.userId
+  //  let token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZGQiOjcxLCJzdWIiOiJDZXNhckNhc0Bob3RtYWlsLmNvbSIsInB3ZCI6Im1pdXBjLjQ1Ni4iLCJwaG8iOiI5MTQ4NzI4MzMifQ.76V1nfjgq2Jk8txT_KezUwFcHaOmt_ZDW2dzviY0qS0"
+    let token = UserStore.shared.userToken
+    let user_id = UserStore.shared.userId
     var items = [HomeItem]()
     
     override func viewDidLoad() {
@@ -24,7 +24,7 @@ class HomeViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        MovieNightApi.getHomeItems(token: token, user_id: 71, responsehandler: handleResponse)
+        MovieNightApi.getHomeItems(token: token, user_id: user_id, responsehandler: handleResponse)
     }
     
     private func handleResponse(response: MovieNightResponse<HomeItem>) {

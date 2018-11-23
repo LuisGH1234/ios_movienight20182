@@ -43,6 +43,11 @@ class MovieNightApi {
         get(token: token, urlString: url, responseHandler: responseHandler, errorHandler: errorHandler)
     }
     
+    static func getListFriends(token: String, user_id: Int, responseHandler: @escaping (MovieNightResponse<Friend>) -> Void, errorHandler: @escaping (Error) -> Void = handleError) {
+        let url = "\(baseUrl)users/\(user_id)/friendships"
+        get(token: token, urlString: url, responseHandler: responseHandler, errorHandler: errorHandler)
+    }
+    
     static func getMyUser(token: String, user_id: Int, responseHandler: @escaping (User) -> Void, errorHandler: @escaping (Error) -> Void = handleError) {
         let url = "\(baseUrl)users/\(user_id)"
         get(token: token, urlString: url, responseHandler: responseHandler, errorHandler: errorHandler)
