@@ -14,7 +14,7 @@ class EventsViewController: UITableViewController {
     
     var events: [Event] = [Event]()
     var currentRow = 0
-    //let token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZGQiOjcxLCJzdWIiOiJDZXNhckNhc0Bob3RtYWlsLmNvbSIsInB3ZCI6Im1pdXBjLjQ1Ni4iLCJwaG8iOiI5MTQ4NzI4MzMifQ.76V1nfjgq2Jk8txT_KezUwFcHaOmt_ZDW2dzviY0qS0"
+    
     let token = UserStore.shared.userToken
     let user_id = UserStore.shared.userId
 
