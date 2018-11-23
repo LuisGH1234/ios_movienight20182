@@ -2,7 +2,7 @@
 //  MovieCell.swift
 //  iMovie_Night
 //
-//  Created by Alumnos on 11/9/18.
+//  Created by Omar Chavez on 11/9/18.
 //  Copyright © 2018 UPC. All rights reserved.
 //
 

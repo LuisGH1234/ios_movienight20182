@@ -2,7 +2,7 @@
 //  ProfileViewController.swift
 //  iMovie_Night
 //
-//  Created by Karen Galindo on 11/9/18.
+//  Created by Luis Galindo on 11/9/18.
 //  Copyright © 2018 UPC. All rights reserved.
 //
 

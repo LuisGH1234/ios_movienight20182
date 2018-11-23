@@ -48,5 +48,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>omdbApi</key>
+	<string>deb5b9ed</string>
 </dict>
 </plist>

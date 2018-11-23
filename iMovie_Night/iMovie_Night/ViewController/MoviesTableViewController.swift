@@ -2,7 +2,7 @@
 //  MoviesTableViewController.swift
 //  iMovie_Night
 //
-//  Created by Alumnos on 11/9/18.
+//  Created by Omar Chavez on 11/9/18.
 //  Copyright © 2018 UPC. All rights reserved.
 //
 
@@ -19,7 +19,7 @@ class MoviesTableViewController: UITableViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        OmdbApi.getSearch(apikey: "deb5b9ed", s: "marvel", responseHandler: handleResponse, errorHandler: handleError)
+        OmdbApi.getSearch(apikey: omdbApikey!, s: "marvel", responseHandler: handleResponse, errorHandler: handleError)
     }
     private func setUpSearchBar(){
         searchBar.delegate = self
@@ -69,6 +69,10 @@ class MoviesTableViewController: UITableViewController, UISearchBarDelegate {
     
     func handleError(error: Error) {
         print("Error while requesting Titles: \(error.localizedDescription)")
+    }
+    
+    var omdbApikey: String? = {
+        return Bundle.main.object(forInfoDictionaryKey: "omdbApi") as? String
     }
     
 }
