@@ -73,7 +73,7 @@ class MoviesTableViewController: UITableViewController, UISearchBarDelegate {
     
     var omdbApikey: String? = {
         return Bundle.main.object(forInfoDictionaryKey: "omdbApi") as? String
-    }
+    }()
     
 }
 
