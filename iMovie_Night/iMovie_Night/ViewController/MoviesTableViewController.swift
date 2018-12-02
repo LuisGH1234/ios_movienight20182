@@ -27,6 +27,7 @@ class MoviesTableViewController: UITableViewController, UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         OmdbApi.getSearch(apikey: "deb5b9ed", s: searchBar.text!, responseHandler: handleResponse, errorHandler: handleError)
         table.reloadData()
+        self.view.endEditing(true)
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1

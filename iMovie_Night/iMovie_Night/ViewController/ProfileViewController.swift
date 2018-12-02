@@ -38,6 +38,6 @@ class ProfileViewController: UIViewController {
         emailTextField.text = response.email
     }
     @IBAction func cancel(_ sender: UIBarButtonItem) {
-        
+        self.view.endEditing(true)
     }
 }
